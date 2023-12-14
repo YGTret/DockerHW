@@ -1,0 +1,25 @@
+version: '1'
+
+services:
+  web:
+    image: httpd
+    environment:
+      - ENVIRONMENT=lab
+    networks:
+      - lab_network
+
+  db:
+    image: mysql
+    environment:
+      - ENVIRONMENT=lab
+      - MYSQL_ROOT_PASSWORD=root_passwd
+      - MYSQL_DATABASE=database_name
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user_passwd
+    networks:
+      - lab_network
+    
+
+networks:
+  lab_network:
+    driver: bridge

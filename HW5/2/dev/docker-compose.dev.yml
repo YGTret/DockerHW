@@ -1,0 +1,25 @@
+version: '1'
+
+services:
+  web:
+    image: nginx
+    environment:
+      - ENVIRONMENT=dev
+    networks:
+      - dev_network
+
+  db:
+    image: mysql
+    environment:
+      - ENVIRONMENT=dev
+      - MYSQL_ROOT_PASSWORD=root_passwd
+      - MYSQL_DATABASE=database_name
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user_passwd
+    networks:
+      - dev_network
+    
+
+networks:
+  dev_network:
+    driver: bridge

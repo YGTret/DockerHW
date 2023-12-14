@@ -1,0 +1,3 @@
+NAME        IMAGE     COMMAND                  SERVICE   CREATED              STATUS              PORTS
+lab-db-1    mysql     "docker-entrypoint.s…"   db        About a minute ago   Up About a minute   3306/tcp, 33060/tcp
+lab-web-1   httpd     "httpd-foreground"       web       About a minute ago   Up About a minute   80/tcp
